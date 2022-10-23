@@ -1,0 +1,41 @@
+.add-form-container {
+  min-height: 100vh;
+}
+.add-destination-form {
+  background-color: rgb(218, 76, 76);
+  width: 60%;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+}
+.input-container input,
+.input-container textarea {
+  width: 70%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+}
+.input-container textarea {
+  resize: horizontal;
+}
+.add-destination-form button {
+  margin-top: 8px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  background-color: green;
+  cursor: pointer;
+}

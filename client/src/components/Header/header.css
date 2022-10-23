@@ -1,0 +1,95 @@
+a {
+  color: rgb(218, 76, 76);
+  cursor: pointer;
+}
+.header-container {
+  height: 70px;
+  width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  width: 70%;
+}
+.img-container img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.profile-container-loggedin {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: space-between;
+}
+.logout-btn {
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(218, 76, 76);
+  padding: 3px 8px;
+  color: white;
+  cursor: pointer;
+}
+.profile-container-loggedout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.login-btn {
+  border: none;
+  border-radius: 8px;
+  background-color: green;
+  padding: 3px 8px;
+  color: white;
+  cursor: pointer;
+}
+.header-modal {
+  background-color: rgb(218, 76, 76);
+  border-radius: 0 0 8px 8px;
+  height: 28vh;
+  width: 30vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  color: white;
+}
+.header-modal h3 {
+  max-width: fit-content;
+  cursor: pointer;
+  color: black;
+}
+.header-modal h2 {
+  margin: auto;
+  max-width: fit-content;
+}
+.header-modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 15vh;
+}
+.header-modal input {
+  width: 80%;
+  border: none;
+  border-radius: 8px;
+  padding: 3px 8px;
+}
+.header-modal span {
+  cursor: pointer;
+  font-style: italic;
+}
+.header-modal p {
+  margin: auto;
+  max-width: fit-content;
+}

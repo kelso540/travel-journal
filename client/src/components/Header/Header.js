@@ -4,7 +4,8 @@ import './header.css';
 // import {UserContext} from './context/UserContext';
 import {Link} from 'react-router-dom';
 
-export default function Header({baseUrl, setUser}) {
+export default function Header({baseUrl}) {
+  const [user, setUser] = useState({});
   const [signupSuccess,setSignupSuccess]=useState(false);
   const [loggedIn,setLoggedIn]=useState(false);
   const [modal,setModal]=useState(false);

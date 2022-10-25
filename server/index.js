@@ -6,6 +6,16 @@ const Travels = require('./dbHelpers');
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.json()); 
 
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+
 //Import routers
 const usersRouter = require('./routes/users-routes')
 const destinationsRouter = require('./routes/destinations-routes')

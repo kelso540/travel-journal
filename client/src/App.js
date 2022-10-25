@@ -18,7 +18,6 @@ import Form from './components/Form.js/Form';
 function App() {
 
 const baseUrl = 'http://localhost:5000';
-const [user, setUser] = useState({});
 const [destinations, setDestinations]=useState([]);
 
 useEffect(()=>{
@@ -34,7 +33,7 @@ useEffect(()=>{
   return (
     // <UserContext.Provider>
       <BrowserRouter>
-        <Header baseUrl={baseUrl} user={setUser}/>
+        <Header baseUrl={baseUrl}/>
               <Routes>
                 <Route path="/" element={<Destinations destinations={destinations} />}/>
                 <Route path="/add-destination" element={<Form/>}/>

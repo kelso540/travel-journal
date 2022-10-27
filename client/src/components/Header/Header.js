@@ -1,11 +1,10 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, useContext} from 'react';
 import axios from 'axios';
 import './header.css';
-// import {UserContext} from './context/UserContext';
+import {UserContext} from '../../context/UserContext';
 import {Link} from 'react-router-dom';
 
 export default function Header({baseUrl}) {
-  const [user, setUser] = useState({});
   const [signupSuccess,setSignupSuccess]=useState(false);
   const [loggedIn,setLoggedIn]=useState(false);
   const [modal,setModal]=useState(false);
@@ -14,7 +13,7 @@ export default function Header({baseUrl}) {
   const [password,setPassword]=useState('');
   const [imageUrl,setImageUrl]=useState('');
   const [message,setMessage]=useState('');
-
+  const {user, setUser} = useContext(UserContext)
   
   
 
@@ -44,7 +43,8 @@ export default function Header({baseUrl}) {
   }
 
   const handleLogout=()=>{
-    
+    setUser({})
+    setLoggedIn(false)
   }
 
 
@@ -54,9 +54,10 @@ export default function Header({baseUrl}) {
         {
          loggedIn ?
          <div className='profile-container-loggedin'>
+          <button><Link to="add-destination">Add new Destination</Link></button>
            <div className='img-container'>
-            <p>Welcome {username}</p>
-            <img src={imageUrl} alt="avatar"/>
+            <p>Welcome {user.username}</p>
+            <img src={user.imageUrl} alt="avatar"/>
            </div>  
            <button className='logout-btn' onClick={handleLogout}>Logout</button>
          </div>

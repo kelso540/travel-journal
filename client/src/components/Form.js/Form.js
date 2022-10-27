@@ -1,16 +1,24 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
 import axios from 'axios';
 import './form.css'
+import {UserContext} from '../../context/UserContext';
 
-export default function Form() {
+export default function Form({baseUrl}) {
 
 const [title,setTitle]=useState('')
 const [description,setDescription]=useState('')
 const [imageUrl,setImageUrl]=useState('')
+const {user, setUser} = useContext(UserContext)
 
 const addNewDestination=(e)=>{ 
     e.preventDefault();
-   
+   axios.post(`${baseUrl}/users/${user.id}/destinations`, {
+     title, description, imageUrl
+   })
+   .then(res=>{
+     console.log(res)
+   })
+   .catch(err=> console.log(err))
 }
 
 
@@ -31,8 +39,6 @@ const addNewDestination=(e)=>{
                 <input value={imageUrl} onChange={(e)=>{setImageUrl(e.target.value)}} placeholder='Enter image url'/>
            </div>
            <button type="submit">Submit</button>
-          
-           
        </form>
        
     </div>

@@ -6,15 +6,18 @@ const Travels = require('./dbHelpers');
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.json()); 
 
-// Add Access Control Allow Origin headers
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
+const cors = require('cors')
+app.use(cors({origin:"*"}))
+
+// // Add Access Control Allow Origin headers CROSS ORIGIN RESOURCE SHARING
+// app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//     res.header(
+//       "Access-Control-Allow-Headers",
+//       "Origin, X-Requested-With, Content-Type, Accept"
+//     );
+//     next();
+//   });
 
 //Import routers
 const usersRouter = require('./routes/users-routes')
